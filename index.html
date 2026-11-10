@@ -3,256 +3,431 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amey Desai's Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <title>Amey Sudhir Desai — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    html, body {
-      font-family: 'Merriweather', 'Times New Roman', serif;
-      font-size: 16px;
-      width: 100%;
-      background-color: #e0e0e0;
-      color: #15317E;
-      margin: 0;
-      padding: 5px;
+    :root {
+      --primary: #15317E;
+      --primary-dark: #0f235c;
+      --primary-light: #eef2ff;
+      --accent: #2563eb;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f1f5f9;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --radius-lg: 14px;
+      --radius-md: 8px;
+      --shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08), 0 4px 12px -2px rgba(15, 23, 42, 0.04);
+    }
+
+    * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      padding: 40px 16px;
     }
 
     ::selection {
-      background-color: khaki;
+      background-color: var(--primary-light);
+      color: var(--primary);
     }
 
     .resume-container {
-      background-color: beige;
-      border: 6px solid #15317E;
-      width: 96%;
-      max-width: 1200px;
-      margin: 10px auto;
-      text-align: center;
-      padding-bottom: 20px;
+      background-color: var(--bg-card);
+      max-width: 960px;
+      margin: 0 auto;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
     }
 
-    .resume-header {
-      border: 2px solid #15317E;
-      margin: 20px;
-    }
-
-    .resume-title {
-      font-size: 2.6rem;
-      font-weight: bold;
-      letter-spacing: 4px;
-      padding: 20px;
-      margin: 2px;
-    }
-    .resume-nav {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      width: 100%;
+     .resume-nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-color);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 4px 16px;
     }
 
     .resume-nav a {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 14px 10px;
-      border: 1px solid #15317E;
-      background-color: beige;
-      color: #15317E;
-      font-weight: bold;
+      padding: 12px 16px;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      font-weight: 600;
       text-decoration: none;
+      transition: color 0.2s ease, background-color 0.2s ease;
+      border-radius: var(--radius-md);
     }
 
     .resume-nav a:hover {
-      background-color: #15317E;
-      color: white;
-      text-decoration: underline;
+      color: var(--primary);
+      background-color: var(--primary-light);
     }
 
-    .resume-nav a:active {
-      background-color: lightblue;
-      color: #15317E;
+       .resume-header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+      color: #ffffff;
+      padding: 44px 48px;
     }
 
     .profile-section {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 36px;
     }
 
     .photo-wrapper {
-      border: 1px solid #15317E;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-shrink: 0;
     }
 
     .profile-photo {
-      border: 2px solid #15317E;
-      padding: 4px;
-      background-color: #e0e0e0;
+      width: 145px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      display: block;
     }
 
     .info-wrapper {
-      border: 1px solid #15317E;
-      padding: 25px;
+      flex: 1;
+    }
+
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .resume-title {
+      font-family: 'Merriweather', serif;
+      font-size: 2.35rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      line-height: 1.2;
+    }
+
+    .programme-title {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .btn-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #ffffff;
+      color: var(--primary);
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .main-content {
+      padding: 44px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    section {
+      scroll-margin-top: 70px;
+    }
+
+    h2 {
+      font-family: 'Merriweather', serif;
+      font-size: 1.15rem;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary-light);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 20px;
+      background-color: var(--primary);
+      border-radius: 3px;
+    }
+
+      .about-text {
+      font-size: 1.05rem;
+      color: var(--text-main);
+      line-height: 1.8;
+      background-color: #f8fafc;
+      padding: 24px 28px;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    }
+
+   
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      text-align: left;
+    }
+
+    th {
+      background-color: #f8fafc;
+      color: var(--text-muted);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    td {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border-color);
+      font-size: 0.95rem;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background-color: #f8fafc;
+    }
+
+    .degree-col {
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .grade-pill {
+      display: inline-block;
+      background-color: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+    }
+
+       .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+      list-style: none;
+    }
+
+    .card-item {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(21, 49, 126, 0.06);
+    }
+
+    .card-item strong {
+      display: block;
+      color: var(--primary);
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .card-item p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+    }
+
+    .project-card {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .yt-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.875rem;
+      padding: 10px 18px;
+      border-radius: var(--radius-md);
+      transition: background-color 0.2s ease;
+    }
+
+    .yt-link:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* Bottom Grid: Skills & Contact */
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 36px;
+      padding-top: 12px;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .skills-list li {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid rgba(21, 49, 126, 0.15);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.2s ease;
+    }
+
+    .skills-list li:hover {
+      background-color: var(--primary);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    .contact-box {
+      background-color: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-md);
+      padding: 24px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       gap: 14px;
     }
 
-    .info-wrapper p {
-      width: 96%;
-      font-size: 1.15rem;
-      font-style: italic;
-      margin: 0 auto;
-      padding: 10px;
-      border: 1px solid #15317E;
-      background-color: white;
-    }
-
-    .highlight-text {
-      font-weight: bold;
-    }
-
-    .btn-email {
-      display: inline-block;
-      color: white;
-      background-color: #15317E;
-      padding: 6px 14px;
-      border: 1px solid #15317E;
-      border-radius: 6px;
-      font-weight: bold;
-      font-style: normal;
-      text-decoration: none;
-    }
-
-    .btn-email:hover {
-      background-color: lightblue;
-      color: #15317E;
-      text-decoration: underline;
-    }
-
-    .main-content {
-      padding: 10px 25px;
-      margin: 10px;
-    }
-
-    section {
-      padding: 15px 10px;
-      margin: 10px auto;
-      width: 100%;
-    }
-
-    h2 {
-      text-decoration: underline;
-      letter-spacing: 2px;
-      font-size: 1.4rem;
-      margin: 12px auto;
-      padding: 6px;
-    }
-
-    .about-text {
-      font-size: 1.1rem;
-      font-style: italic;
-      line-height: 1.6;
-      margin: 10px auto;
-      width: 96%;
-    }
-
-    .about-text::first-letter {
-      font-size: 1.8em;
-      font-weight: bold;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 100%;
-      margin: 10px auto;
-    }
-
-    th, td {
-      border: 2px solid #15317E;
-      background-color: beige;
-      padding: 14px;
-      text-align: center;
-    }
-
-    th {
-      font-size: 1.1rem;
-      font-weight: bold;
-    }
-
-    .bullet-list {
-      padding: 10px 25px;
-      font-style: italic;
-      display: inline-block;
-      text-align: left;
-      margin: 5px auto;
-    }
-
-    .bullet-list li {
-      margin: 10px;
-      font-size: 1.1rem;
-    }
-
-    .bottom-grid {
-      border: 2px solid #15317E;
-      margin: 20px;
-      padding: 25px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 30px;
-    }
-
-    .skills-list {
-      padding: 5px;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      list-style-type: none;
-    }
-
-    .skills-list li {
-      width: 95%;
-      border: 1px solid #15317E;
-      background-color: white;
-      padding: 10px 14px;
-      margin: 6px auto;
-      font-style: italic;
-      font-size: 1.05rem;
-    }
-
-    .skills-list li:hover {
-      background-color: #15317E;
-      color: white;
-      cursor: default;
-    }
-
-    .contact-box {
-      border: 2px solid #15317E;
-      background-color: white;
-      padding: 30px 15px;
-      margin: 15px auto;
-      width: 95%;
-    }
-
     .contact-box p {
-      font-size: 1.15rem;
-      font-style: italic;
+      color: var(--text-muted);
+      font-size: 0.95rem;
     }
 
-    @media (max-width: 750px) {
-      .resume-container { width: 98%; }
-      .resume-nav { grid-template-columns: 1fr; }
-      .profile-section { grid-template-columns: 1fr; }
-      .bottom-grid { grid-template-columns: 1fr; }
+    .contact-box .btn-email {
+      background-color: var(--primary);
+      color: #ffffff;
+      align-self: flex-start;
     }
 
-    @media (min-width: 800px) and (max-width: 1000px) {
-      .resume-container { width: 96%; }
-      .bottom-grid { grid-template-columns: 1fr 1fr; }
+    .contact-box .btn-email:hover {
+      background-color: var(--primary-dark);
+    }
+
+       @media (max-width: 768px) {
+      body {
+        padding: 0;
+      }
+
+      .resume-container {
+        border-radius: 0;
+        border: none;
+      }
+
+      .resume-header {
+        padding: 32px 24px;
+        text-align: center;
+      }
+
+      .profile-section {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .resume-title {
+        font-size: 1.85rem;
+      }
+
+      .main-content {
+        padding: 28px 20px;
+      }
+
+      .bottom-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .contact-box .btn-email {
+        align-self: stretch;
+        justify-content: center;
+      }
+    }
+
+       @media print {
+      body {
+        background: #ffffff;
+        padding: 0;
+      }
+      .resume-container {
+        box-shadow: none;
+        border: none;
+      }
+      .resume-nav {
+        display: none;
+      }
     }
   </style>
 </head>
@@ -260,103 +435,128 @@
 
   <main class="resume-container">
 
+    <nav class="resume-nav" aria-label="Resume Sections">
+      <a href="#about">About Me</a>
+      <a href="#education">Education</a>
+      <a href="#extracurriculars">Extracurriculars</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
     <header class="resume-header">
-      <h1 class="resume-title">RESUME</h1>
-
-      <nav class="resume-nav">
-        <a href="#about">About Me</a>
-        <a href="#education">Educational Qualification</a>
-        <a href="#extracurriculars">Extracurriculars</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-
       <div class="profile-section">
         <div class="photo-wrapper">
-          <img src="./PICTURE.png" alt="Profile Picture" width="180" height="210" loading="lazy" class="profile-photo">
+          <img src="./PICTURE.png" alt="Amey Sudhir Desai" width="145" height="170" loading="lazy" class="profile-photo">
         </div>
         <div class="info-wrapper">
-          <p>Name: <span class="highlight-text">Amey Sudhir Desai</span></p>
-          <p>Programme: <span>BBA-DBE (IIM Bangalore)</span></p>
-          <p>Email: <a href="mailto:ameyydesai@gmail.com" class="btn-email">ameyydesai@gmail.com</a></p>
+          <span class="badge">RESUME</span>
+          <h1 class="resume-title">Amey Sudhir Desai</h1>
+          <p class="programme-title">BBA-DBE (Digital Business &amp; Entrepreneurship) &bull; IIM Bangalore</p>
+          <a href="mailto:ameyydesai@gmail.com" class="btn-email">
+            &#9993; ameyydesai@gmail.com
+          </a>
         </div>
       </div>
     </header>
 
     <div class="main-content">
+
       <section id="about">
-        <h2>ABOUT ME</h2>
-        <p class="about-text">I am a motivated student with a strong academic record and a track record of leadership, having served as Head Boy and been recognised as Best Student and Academic Topper. I enjoy research, creative writing and copywriting, and I am building a foundation in business and digital entrepreneurship through the BBA-DBE programme at IIM Bangalore. My goal is to combine analytical thinking with clear communication to create impact in the world of business.</p>
+        <h2>About Me</h2>
+        <p class="about-text">
+          I am a motivated student with a strong academic record and a track record of leadership, having served as Head Boy and been recognised as Best Student and Academic Topper. I enjoy research, creative writing, and copywriting, and I am building a foundation in business and digital entrepreneurship through the BBA-DBE programme at IIM Bangalore. My goal is to combine analytical thinking with clear communication to create impact in the world of business.
+        </p>
       </section>
 
       <section id="education">
-        <h2>EDUCATIONAL QUALIFICATION</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Degree / Qualification</th>
-              <th>Institution</th>
-              <th>Grade / Batch</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>BBA-DBE (Digital Business & Entrepreneurship)</td>
-              <td>IIM BANGALORE</td>
-              <td>BATCH 3</td>
-            </tr>
-            <tr>
-              <td>Class 12th</td>
-              <td>JAIPURIAR SCHOOL</td>
-              <td>83%</td>
-            </tr>
-            <tr>
-              <td>Class 10th</td>
-              <td>AMRITA VIDYALAYAM</td>
-              <td>92.6%</td>
-            </tr>
-          </tbody>
-        </table>
+        <h2>Educational Qualification</h2>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Degree / Qualification</th>
+                <th>Institution</th>
+                <th>Grade / Batch</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="degree-col">BBA-DBE (Digital Business &amp; Entrepreneurship)</td>
+                <td>IIM Bangalore</td>
+                <td><span class="grade-pill">Batch 3</span></td>
+              </tr>
+              <tr>
+                <td class="degree-col">Class 12th</td>
+                <td>Jaipuriar School</td>
+                <td><span class="grade-pill">83%</span></td>
+              </tr>
+              <tr>
+                <td class="degree-col">Class 10th</td>
+                <td>Amrita Vidyalayam</td>
+                <td><span class="grade-pill">92.6%</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
 
       <section id="extracurriculars">
-        <h2>EXTRACURRICULARS</h2>
-        <ul class="bullet-list">
-          <li><strong>Head Boy</strong> : Led the student body and represented fellow students.</li>
-          <li><strong>Best Student</strong> : Recognised for overall excellence.</li>
-          <li><strong>Academic Topper</strong> : Top performer in academics.</li>
+        <h2>Extracurriculars &amp; Achievements</h2>
+        <ul class="card-grid">
+          <li class="card-item">
+            <strong>Head Boy</strong>
+            <p>Led the student body and represented fellow students across school initiatives.</p>
+          </li>
+          <li class="card-item">
+            <strong>Best Student</strong>
+            <p>Recognised for overall all-round excellence in academics and leadership.</p>
+          </li>
+          <li class="card-item">
+            <strong>Academic Topper</strong>
+            <p>Awarded for achieving top academic performance in the cohort.</p>
+          </li>
         </ul>
       </section>
-      
+
       <section id="projects">
-        <h2>PROJECTS</h2>
-        <ul class="bullet-list">
-          <li><strong>Bombay Shaving Company 01</strong> : Created a promotional video. <a href="https://youtu.be/I40hHT455Zs?si=FY1vnGn0HUUvJ3Da" target="_blank" style="color: #15317E; text-decoration: underline; font-weight: bold;">Watch on YouTube</a></li>
-        </ul>
-      </section>
-    </div>
-
-    <div class="bottom-grid">
-      <section id="skills">
-        <h2>SKILLS</h2>
-        <ul class="skills-list">
-          <li>&#8594; Communication</li>
-          <li>&#8594; Leadership & Teamwork</li>
-          <li>&#8594; Creative Writing</li>
-          <li>&#8594; Copywriting</li>
-          <li>&#8594; Microsoft Excel</li>
-          <li>&#8594; Microsoft PowerPoint</li>
-          <li>&#8594; Microsoft Word</li>
-        </ul>
-      </section>
-
-      <section id="contact">
-        <h2>CONTACT</h2>
-        <div class="contact-box">
-          <p>Email: <a href="mailto:ameyydesai@gmail.com" class="btn-email">ameyydesai@gmail.com</a></p>
+        <h2>Projects</h2>
+        <div class="card-item project-card">
+          <div>
+            <strong>Bombay Shaving Company 01</strong>
+            <p>Created and produced a promotional marketing video campaign.</p>
+          </div>
+          <a href="https://youtu.be/I40hHT455Zs?si=FY1vnGn0HUUvJ3Da" target="_blank" rel="noopener noreferrer" class="yt-link">
+            Watch on YouTube &#8599;
+          </a>
         </div>
       </section>
+
+      <div class="bottom-grid">
+        <section id="skills">
+          <h2>Skills</h2>
+          <ul class="skills-list">
+            <li>Communication</li>
+            <li>Leadership &amp; Teamwork</li>
+            <li>Creative Writing</li>
+            <li>Copywriting</li>
+            <li>Microsoft Excel</li>
+            <li>Microsoft PowerPoint</li>
+            <li>Microsoft Word</li>
+          </ul>
+        </section>
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <div class="contact-box">
+            <p>Interested in collaborating on business projects, copywriting, or any other opportunities?</p>
+            <a href="mailto:ameyydesai@gmail.com" class="btn-email">
+              Email Amey Directly
+            </a>
+          </div>
+        </section>
+      </div>
+
     </div>
 
   </main>
