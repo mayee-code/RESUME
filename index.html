@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amey Desai's Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      font-family: 'Merriweather', 'Times New Roman', serif;
+      font-size: 16px;
+      width: 100%;
+      background-color: #e0e0e0;
+      color: #15317E;
+      margin: 0;
+      padding: 5px;
+      box-sizing: border-box;
+    }
+
+    ::selection {
+      background-color: khaki;
+    }
+
+    .resume-container {
+      background-color: beige;
+      border: 6px solid #15317E;
+      width: 96%;
+      max-width: 1200px;
+      margin: 10px auto;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+
+    .resume-header {
+      border: 2px solid #15317E;
+      margin: 20px;
+    }
+
+    .resume-title {
+      font-size: 2.6rem;
+      font-weight: bold;
+      letter-spacing: 4px;
+      padding: 20px;
+      margin: 2px;
+    }
+    .resume-nav {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      width: 100%;
+    }
+
+    .resume-nav a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 14px 10px;
+      border: 1px solid #15317E;
+      background-color: beige;
+      color: #15317E;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .resume-nav a:hover {
+      background-color: #15317E;
+      color: white;
+      text-decoration: underline;
+    }
+
+    .resume-nav a:active {
+      background-color: lightblue;
+      color: #15317E;
+    }
+
+    .profile-section {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      width: 100%;
+    }
+
+    .photo-wrapper {
+      border: 1px solid #15317E;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .profile-photo {
+      border: 2px solid #15317E;
+      padding: 4px;
+      background-color: #e0e0e0;
+    }
+
+    .info-wrapper {
+      border: 1px solid #15317E;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .info-wrapper p {
+      width: 96%;
+      font-size: 1.15rem;
+      font-style: italic;
+      margin: 0 auto;
+      padding: 10px;
+      border: 1px solid #15317E;
+      background-color: white;
+    }
+
+    .highlight-text {
+      font-weight: bold;
+    }
+
+    .btn-email {
+      display: inline-block;
+      color: white;
+      background-color: #15317E;
+      padding: 6px 14px;
+      border: 1px solid #15317E;
+      border-radius: 6px;
+      font-weight: bold;
+      font-style: normal;
+      text-decoration: none;
+    }
+
+    .btn-email:hover {
+      background-color: lightblue;
+      color: #15317E;
+      text-decoration: underline;
+    }
+
+    .main-content {
+      padding: 10px 25px;
+      margin: 10px;
+    }
+
+    section {
+      padding: 15px 10px;
+      margin: 10px auto;
+      width: 100%;
+    }
+
+    h2 {
+      text-decoration: underline;
+      letter-spacing: 2px;
+      font-size: 1.4rem;
+      margin: 12px auto;
+      padding: 6px;
+    }
+
+    .about-text {
+      font-size: 1.1rem;
+      font-style: italic;
+      line-height: 1.6;
+      margin: 10px auto;
+      width: 96%;
+    }
+
+    .about-text::first-letter {
+      font-size: 1.8em;
+      font-weight: bold;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 10px auto;
+    }
+
+    th, td {
+      border: 2px solid #15317E;
+      background-color: beige;
+      padding: 14px;
+      text-align: center;
+    }
+
+    th {
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
+
+    .bullet-list {
+      padding: 10px 25px;
+      font-style: italic;
+      display: inline-block;
+      text-align: left;
+      margin: 5px auto;
+    }
+
+    .bullet-list li {
+      margin: 10px;
+      font-size: 1.1rem;
+    }
+
+    .bottom-grid {
+      border: 2px solid #15317E;
+      margin: 20px;
+      padding: 25px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .skills-list {
+      padding: 5px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      list-style-type: none;
+    }
+
+    .skills-list li {
+      width: 95%;
+      border: 1px solid #15317E;
+      background-color: white;
+      padding: 10px 14px;
+      margin: 6px auto;
+      font-style: italic;
+      font-size: 1.05rem;
+    }
+
+    .skills-list li:hover {
+      background-color: #15317E;
+      color: white;
+      cursor: default;
+    }
+
+    .contact-box {
+      border: 2px solid #15317E;
+      background-color: white;
+      padding: 30px 15px;
+      margin: 15px auto;
+      width: 95%;
+    }
+
+    .contact-box p {
+      font-size: 1.15rem;
+      font-style: italic;
+    }
+
+    @media (max-width: 750px) {
+      .resume-container { width: 98%; }
+      .resume-nav { grid-template-columns: 1fr; }
+      .profile-section { grid-template-columns: 1fr; }
+      .bottom-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (min-width: 800px) and (max-width: 1000px) {
+      .resume-container { width: 96%; }
+      .bottom-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <main class="resume-container">
+
+    <header class="resume-header">
+      <h1 class="resume-title">RESUME</h1>
+
+      <nav class="resume-nav">
+        <a href="#about">About Me</a>
+        <a href="#education">Educational Qualification</a>
+        <a href="#extracurriculars">Extracurriculars</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="profile-section">
+        <div class="photo-wrapper">
+          <img src="./PICTURE.png" alt="Profile Picture" width="180" height="210" loading="lazy" class="profile-photo">
+        </div>
+        <div class="info-wrapper">
+          <p>Name: <span class="highlight-text">Amey Sudhir Desai</span></p>
+          <p>Programme: <span>BBA-DBE (IIM Bangalore)</span></p>
+          <p>Email: <a href="mailto:ameyydesai@gmail.com" class="btn-email">ameyydesai@gmail.com</a></p>
+        </div>
+      </div>
+    </header>
+
+    <div class="main-content">
+      <section id="about">
+        <h2>ABOUT ME</h2>
+        <p class="about-text">I am a motivated student with a strong academic record and a track record of leadership, having served as Head Boy and been recognised as Best Student and Academic Topper. I enjoy research, creative writing and copywriting, and I am building a foundation in business and digital entrepreneurship through the BBA-DBE programme at IIM Bangalore. My goal is to combine analytical thinking with clear communication to create impact in the world of business.</p>
+      </section>
+
+      <section id="education">
+        <h2>EDUCATIONAL QUALIFICATION</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>Degree / Qualification</th>
+              <th>Institution</th>
+              <th>Grade / Batch</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>BBA-DBE (Digital Business & Entrepreneurship)</td>
+              <td>IIM BANGALORE</td>
+              <td>BATCH 3</td>
+            </tr>
+            <tr>
+              <td>Class 12th</td>
+              <td>JAIPURIAR SCHOOL</td>
+              <td>83%</td>
+            </tr>
+            <tr>
+              <td>Class 10th</td>
+              <td>AMRITA VIDYALAYAM</td>
+              <td>92.6%</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="extracurriculars">
+        <h2>EXTRACURRICULARS</h2>
+        <ul class="bullet-list">
+          <li><strong>Head Boy</strong> : Led the student body and represented fellow students.</li>
+          <li><strong>Best Student</strong> : Recognised for overall excellence.</li>
+          <li><strong>Academic Topper</strong> : Top performer in academics.</li>
+        </ul>
+      </section>
+      
+      <section id="projects">
+        <h2>PROJECTS</h2>
+        <ul class="bullet-list">
+          <li><strong>Bombay Shaving Company 01</strong> : Created a promotional video. <a href="https://youtu.be/I40hHT455Zs?si=FY1vnGn0HUUvJ3Da" target="_blank" style="color: #15317E; text-decoration: underline; font-weight: bold;">Watch on YouTube</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <div class="bottom-grid">
+      <section id="skills">
+        <h2>SKILLS</h2>
+        <ul class="skills-list">
+          <li>&#8594; Communication</li>
+          <li>&#8594; Leadership & Teamwork</li>
+          <li>&#8594; Creative Writing</li>
+          <li>&#8594; Copywriting</li>
+          <li>&#8594; Microsoft Excel</li>
+          <li>&#8594; Microsoft PowerPoint</li>
+          <li>&#8594; Microsoft Word</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>CONTACT</h2>
+        <div class="contact-box">
+          <p>Email: <a href="mailto:ameyydesai@gmail.com" class="btn-email">ameyydesai@gmail.com</a></p>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+</body>
+</html>
